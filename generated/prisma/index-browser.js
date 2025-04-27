@@ -136,6 +136,8 @@ exports.Prisma.BikeScalarFieldEnum = {
 exports.Prisma.ServiceRecordScalarFieldEnum = {
   serviceId: 'serviceId',
   bikeId: 'bikeId',
+  serviceDate: 'serviceDate',
+  completionDate: 'completionDate',
   description: 'description',
   status: 'status'
 };
@@ -148,6 +150,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 exports.Status = exports.$Enums.Status = {
   pending: 'pending',

@@ -32,11 +32,15 @@ model Bike {
 }
 
 model ServiceRecord {
-  serviceId   String @id @default(uuid())
-  bikeId      String
-  bike        Bike   @relation(fields: [bikeId], references: [bikeId], onDelete: Cascade)
-  description String
-  status      Status
+  serviceId      String    @id @default(uuid())
+  bikeId         String
+  bike           Bike      @relation(fields: [bikeId], references: [bikeId], onDelete: Cascade)
+  serviceDate    DateTime
+  completionDate DateTime?
+  description    String?
+  status         Status
+
+  @@map("service_records")
 }
 
 enum Status {

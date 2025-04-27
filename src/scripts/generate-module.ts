@@ -9,10 +9,8 @@ if (!moduleName) {
   process.exit(1);
 }
 
-// Convert first letter to uppercase for proper naming
 const moduleNameCapitalized =
-  moduleName.charAt(0).toUpperCase() + moduleName.slice(1).toLowerCase();
-const moduleNameLower = moduleName.toLowerCase();
+  moduleName.charAt(0).toUpperCase() + moduleName.slice(1);
 
 // Define the base directory for modules
 const baseDir = path.join(
@@ -30,7 +28,7 @@ if (!fs.existsSync(baseDir)) {
 }
 
 // Create controller file with template
-const controllerTemplate = `import { ${moduleNameCapitalized}Service } from './${moduleNameLower}.service';
+const controllerTemplate = `import { ${moduleNameCapitalized}Service } from './${moduleName}.service';
 import sendResponse from '../../../shared/sendResponse';
 import catchAsync from '../../../shared/catchAsync';
 
@@ -39,10 +37,10 @@ export const ${moduleNameCapitalized}Controller = {
 };
 `;
 fs.writeFileSync(
-  path.join(baseDir, `${moduleNameLower}.controller.ts`),
+  path.join(baseDir, `${moduleName}.controller.ts`),
   controllerTemplate
 );
-console.log(`Created ${moduleNameLower}.controller.ts with template`);
+console.log(`Created ${moduleName}.controller.ts with template`);
 
 // Create service file with template
 const serviceTemplate = `export const ${moduleNameCapitalized}Service = {
@@ -50,10 +48,10 @@ const serviceTemplate = `export const ${moduleNameCapitalized}Service = {
 };
 `;
 fs.writeFileSync(
-  path.join(baseDir, `${moduleNameLower}.service.ts`),
+  path.join(baseDir, `${moduleName}.service.ts`),
   serviceTemplate
 );
-console.log(`Created ${moduleNameLower}.service.ts with template`);
+console.log(`Created ${moduleName}.service.ts with template`);
 
 // Create routes file with template
 const routesTemplate = `import express from 'express';
@@ -63,11 +61,8 @@ const router = express.Router();
 
 export const ${moduleNameCapitalized}Routes = router;
 `;
-fs.writeFileSync(
-  path.join(baseDir, `${moduleNameLower}.routes.ts`),
-  routesTemplate
-);
-console.log(`Created ${moduleNameLower}.routes.ts with template`);
+fs.writeFileSync(path.join(baseDir, `${moduleName}.routes.ts`), routesTemplate);
+console.log(`Created ${moduleName}.routes.ts with template`);
 
 // Create validation file with template
 const validationTemplate = `import { z } from 'zod';
@@ -77,11 +72,11 @@ export const ${moduleNameCapitalized}Validation = {
 };
 `;
 fs.writeFileSync(
-  path.join(baseDir, `${moduleNameLower}.validation.ts`),
+  path.join(baseDir, `${moduleName}.validation.ts`),
   validationTemplate
 );
 
-console.log(`Created ${moduleNameLower}.validation.ts with template`);
+console.log(`Created ${moduleName}.validation.ts with template`);
 
 console.log(
   `Module '${moduleNameCapitalized}' has been generated successfully!`
