@@ -11,4 +11,13 @@ router.post(
   CustomerController.createCustomer
 );
 
+router.get('/', CustomerController.getAllCustomers);
+router.get('/:id', CustomerController.getSingleCustomer);
+router.put(
+  '/:id',
+  validateRequest(CustomerValidation.updateCustomerZodSchema),
+  CustomerController.updateCustomer
+);
+router.delete('/:id', CustomerController.deleteCustomer);
+
 export const CustomerRoutes = router;
