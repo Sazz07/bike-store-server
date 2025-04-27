@@ -52,9 +52,21 @@ const completeService = catchAsync(async (req, res) => {
   });
 });
 
+const getOverdueServices = catchAsync(async (req, res) => {
+  const result = await ServiceRecordService.getOverdueServices();
+
+  sendResponse(res, {
+    statusCode: status.OK,
+    success: true,
+    message: 'Overdue or pending services fetched successfully',
+    data: result,
+  });
+});
+
 export const ServiceRecordController = {
   createServiceRecord,
   getAllServiceRecords,
   getSingleServiceRecord,
   completeService,
+  getOverdueServices,
 };

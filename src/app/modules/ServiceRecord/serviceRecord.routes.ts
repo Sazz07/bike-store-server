@@ -11,6 +11,7 @@ router.post(
 );
 
 router.get('/', ServiceRecordController.getAllServiceRecords);
+router.get('/status', ServiceRecordController.getOverdueServices);
 router.get('/:id', ServiceRecordController.getSingleServiceRecord);
 router.put(
   '/:id/complete',
