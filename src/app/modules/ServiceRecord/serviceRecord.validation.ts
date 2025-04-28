@@ -1,5 +1,5 @@
+import { Status } from '@prisma/client';
 import { z } from 'zod';
-import { Status } from '../../../../generated/prisma';
 
 const createServiceRecordSchema = z.object({
   body: z.object({

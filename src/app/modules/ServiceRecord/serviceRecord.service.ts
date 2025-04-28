@@ -1,4 +1,4 @@
-import { ServiceRecord, Status } from '../../../../generated/prisma';
+import { ServiceRecord, Status } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 
 const createServiceRecord = async (data: ServiceRecord) => {

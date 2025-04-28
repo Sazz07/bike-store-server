@@ -11,7 +11,7 @@ import AppError from '../errors/AppError';
 import {
   PrismaClientKnownRequestError,
   PrismaClientValidationError,
-} from '../../../generated/prisma/runtime/library';
+} from '@prisma/client/runtime/library';
 
 const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   let status: number = httpStatus.INTERNAL_SERVER_ERROR;

@@ -1,4 +1,4 @@
-import { Customer } from '../../../../generated/prisma';
+import { Customer } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 
 const createCustomer = async (data: Customer) => {

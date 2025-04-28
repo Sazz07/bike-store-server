@@ -1,4 +1,4 @@
-import { PrismaClientKnownRequestError } from '../../../generated/prisma/runtime/library';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import { TErrorSources, TGenericErrorResponse } from '../interface/error';
 import status from 'http-status';
 

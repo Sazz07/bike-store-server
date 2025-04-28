@@ -4,8 +4,12 @@ import config from './config';
 
 const port = config.port;
 
-(async function main() {
-  app.listen(port, () => {
-    console.log(`Bike Store Server is running on port ${port}`);
-  }) as Server;
-})();
+if (process.env.NODE_ENV !== 'production') {
+  (async function main() {
+    app.listen(port, () => {
+      console.log(`Bike Store Server is running on port ${port}`);
+    }) as Server;
+  })();
+}
+
+export default app;

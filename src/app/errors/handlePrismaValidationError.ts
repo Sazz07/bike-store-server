@@ -1,4 +1,4 @@
-import { PrismaClientValidationError } from '../../../generated/prisma/runtime/library';
+import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { TErrorSources, TGenericErrorResponse } from '../interface/error';
 import status from 'http-status';
 
