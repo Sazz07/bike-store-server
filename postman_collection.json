@@ -1,0 +1,368 @@
+{
+  "info": {
+    "_postman_id": "42a0bfc1-667b-4bff-9b7f-eeeb3b8e2072",
+    "name": "Bike-Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18838938",
+    "_collection_link": "https://galactic-astronaut-184430.postman.co/workspace/Sazzad~1d0535dc-27ec-4fd0-b26e-dcc48bf8aadc/collection/18838938-42a0bfc1-667b-4bff-9b7f-eeeb3b8e2072?action=share&source=collection_link&creator=18838938"
+  },
+  "item": [
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Create Customers",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Test User 2\",\r\n    \"email\": \"testuser2@example.com\",\r\n    \"phone\": \"1234567890\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://bs-server-tau.vercel.app/api/customers",
+              "protocol": "https",
+              "host": ["bs-server-tau", "vercel", "app"],
+              "path": ["api", "customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Customers",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/customers",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "customers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Customers",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/customers/987b97a1-98b3-4cc1-8ab2-ed39f4d32feb",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "customers",
+                "987b97a1-98b3-4cc1-8ab2-ed39f4d32feb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Single Customers",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Johnathan Doe\",\r\n    \"phone\": \"555-123-9999\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/customers/987b97a1-98b3-4cc1-8ab2-ed39f4d32feb",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "customers",
+                "987b97a1-98b3-4cc1-8ab2-ed39f4d32feb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Single Customers Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Johnathan Doe\",\r\n    \"phone\": \"555-123-9999\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/customers/fef95413-2979-410d-8c66-1b03e06b42ed",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "customers",
+                "fef95413-2979-410d-8c66-1b03e06b42ed"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bike",
+      "item": [
+        {
+          "name": "Create Bike",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"brand\": \"Yamaha\",\r\n  \"model\": \"R15\",\r\n  \"year\": 2022,\r\n  \"customerId\": \"2edd24f1-6319-4608-bbaa-e860a29af264\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/bikes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "bikes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Bikes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/bikes",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "bikes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Bike",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/bikes/2dae8592-33e8-4e58-83e0-22de723e1a82",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "bikes", "2dae8592-33e8-4e58-83e0-22de723e1a82"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Service Records",
+      "item": [
+        {
+          "name": "Create A Service Record",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"bikeId\": \"868a6f3d-de0e-4809-91e3-9bf942ea8b0d\",\r\n    \"serviceDate\": \"2023-04-20T11:00:00.000Z\",\r\n    \"description\": \"Full service and maintenance\",\r\n    \"status\": \"done\",\r\n    \"completionDate\": \"2023-05-20T10:00:00.000Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "services"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All services",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/services",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "services"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pending or Overdue Services (older than 7 days)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/services/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "services", "status"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get A single services",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/services/eaf5f980-621d-4dbd-b184-8ea7e7733d74",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "services",
+                "eaf5f980-621d-4dbd-b184-8ea7e7733d74"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Mark a service as completed",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"completionDate\": \"2025-04-11T15:30:00.000Z\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/services/eaf5f980-621d-4dbd-b184-8ea7e7733d74/complete",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [
+                "api",
+                "services",
+                "eaf5f980-621d-4dbd-b184-8ea7e7733d74",
+                "complete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "test",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://bike-pg-neon.vercel.app",
+          "protocol": "https",
+          "host": ["bike-pg-neon", "vercel", "app"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
